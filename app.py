@@ -75,7 +75,7 @@ def edit(id):
 
 @app.route('/<int:id>/delete', methods=('POST',))
 def delete(id):
-    post = get_post(id)
+    post = get_post(id)     #it is post request
     conn = get_db_connection()
     conn.execute('DELETE FROM posts WHERE id = ?', (id,))
     conn.commit()
